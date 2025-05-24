@@ -4,6 +4,7 @@ import 'package:workers_managment_app/main.dart';
 import 'package:workers_managment_app/utils/theme.dart';
 import 'package:workers_managment_app/screens/widgets/primary_btn.dart';
 import 'package:workers_managment_app/screens/widgets/textfield.dart';
+import 'package:workers_managment_app/screens/reset_password_screen.dart';
 
 class LoginScreenn extends StatefulWidget {
   const LoginScreenn({super.key});
@@ -114,10 +115,10 @@ class _LoginScreennState extends State<LoginScreenn> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                  builder: ((context) => const MyApp()),
+                                  builder: ((context) => const ResetPasswordScreen()),
                                 ),
                               );
                             },
