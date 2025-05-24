@@ -10,7 +10,6 @@ Color dColor = const Color(0xff000000);
 Color thirdPrimary = const Color(0xffF5CEBE);
 Color darkcolor = const Color(0xff121212);
 Color secprimary = const Color.fromARGB(255, 219, 232, 216);
-Color thirdprimary = const Color.fromARGB(255, 181, 220, 172);
 Color lightPrimary = const Color.fromARGB(255, 196, 181, 130); // color with 80% opacity
 Color grey1 = const Color(0xff6C6A6A);
 Color grey2 = const Color(0xff797979);
