@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:workers_managment_app/main.dart';
 import 'package:workers_managment_app/utils/theme.dart';
 import 'package:workers_managment_app/screens/widgets/primary_btn.dart';
 import 'package:workers_managment_app/screens/widgets/textfield.dart';
 import 'package:workers_managment_app/screens/reset_password_screen.dart';
+import 'package:workers_managment_app/screens/home_screen.dart';
 
 class LoginScreenn extends StatefulWidget {
   const LoginScreenn({super.key});
@@ -30,10 +30,7 @@ class _LoginScreennState extends State<LoginScreenn> {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(255, 224, 224, 217),
-              primary,
-            ],
+            colors: [const Color.fromARGB(255, 224, 224, 217), primary],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -83,7 +80,7 @@ class _LoginScreennState extends State<LoginScreenn> {
                         validator: (String? value) {
                           if (value!.isEmpty) {
                             return "Please enter your email address";
-                          }  
+                          }
                           if (!value.contains('@') || !value.contains('.com')) {
                             return "Enter a Valid Email";
                           }
@@ -118,7 +115,9 @@ class _LoginScreennState extends State<LoginScreenn> {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                  builder: ((context) => const ResetPasswordScreen()),
+                                  builder:
+                                      ((context) =>
+                                          const ResetPasswordScreen()),
                                 ),
                               );
                             },
@@ -154,6 +153,15 @@ class _LoginScreennState extends State<LoginScreenn> {
                             return;
                           }
 
+                          // Optionally: Authenticate the user here
+
+                          // Navigate to home (DashboardScreen)
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DashboardScreen(),
+                            ),
+                          );
                         },
                       ),
                     ],
