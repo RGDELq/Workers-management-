@@ -3,7 +3,7 @@ import '../../utils/theme.dart';
 
 class TextFieldWidget extends StatefulWidget {
   const TextFieldWidget({
-    Key? key,
+    super.key,
     required this.controller,
     this.label,
     required this.validator,
@@ -12,7 +12,7 @@ class TextFieldWidget extends StatefulWidget {
     this.perfix,
     required this.fillColor,
     required this.filled,
-  }) : super(key: key);
+  });
 
   final TextEditingController controller;
   final String? label;

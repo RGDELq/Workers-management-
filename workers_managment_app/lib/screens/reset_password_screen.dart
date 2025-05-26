@@ -164,6 +164,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                           });
 
                           // Show success message
+                          // ignore: use_build_context_synchronously
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
@@ -175,6 +176,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
 
                           // Navigate back to login screen
                           Navigator.pushReplacement(
+                            // ignore: use_build_context_synchronously
                             context,
                             CupertinoPageRoute(
                               builder: (context) => const LoginScreenn(),

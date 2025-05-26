@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workers_managment_app/screens/projects_screen.dart';
 import 'package:workers_managment_app/utils/theme.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -24,32 +25,44 @@ class DashboardScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Welcome Mohammed..',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      const Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Text(
+                          'مرحبا محمد',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
+
                       const SizedBox(height: 45),
                       Row(
                         children: [
                           _StatCard(
-                            title: 'Total Workers',
+                            title: 'أجمالي العمال ',
                             value: '55',
                             onTap: () {},
                           ),
                           const SizedBox(width: 16),
                           _StatCard(
-                            title: 'Total Projects',
+                            title: 'أجمالي المشاريع ',
                             value: '12',
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ProjectListScreen(),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
                       const SizedBox(height: 80),
                       const Text(
-                        'Reports',
+                        'التقارير',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -58,17 +71,29 @@ class DashboardScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 25),
 
-                      _FullWidthReportCard(title: 'All Reports', value: '25', onTap: () {}),
+                      _FullWidthReportCard(
+                        title: 'جميع التقارير ',
+                        value: '25',
+                        onTap: () {},
+                      ),
 
                       const SizedBox(height: 24),
                       Row(
                         children: [
                           Expanded(
-                            child: _ReportCard(title: 'Accepted', value: '17', onTap: () {}),
+                            child: _ReportCard(
+                              title: 'المقبولة',
+                              value: '17',
+                              onTap: () {},
+                            ),
                           ),
                           const SizedBox(width: 16),
                           Expanded(
-                            child: _ReportCard(title: 'Pending', value: '22', onTap: () {}),
+                            child: _ReportCard(
+                              title: 'المعلقة',
+                              value: '22',
+                              onTap: () {},
+                            ),
                           ),
                         ],
                       ),
@@ -76,8 +101,6 @@ class DashboardScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-   
             ],
           ),
         ),
@@ -123,8 +146,18 @@ class _StatCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                  const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.brown),
+                  Text(
+                    value,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Icon(
+                    Icons.arrow_forward_ios,
+                    size: 16,
+                    color: Colors.brown,
+                  ),
                 ],
               ),
             ],
@@ -165,9 +198,15 @@ class _ReportCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(title, style: const TextStyle(fontSize: 16, color: Colors.black87)),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 16, color: Colors.black87),
+            ),
             const SizedBox(height: 8),
-            Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(
+              value,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),
@@ -206,9 +245,15 @@ class _FullWidthReportCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Text(title, style: const TextStyle(fontSize: 16, color: Colors.black87)),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 16, color: Colors.black87),
+            ),
             const SizedBox(height: 8),
-            Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(
+              value,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),

@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Workers managment ',
       theme: ThemeData(
+                fontFamily: 'Cairo', 
+
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
