@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-
 //  داتا مؤقته 
 class ProjectListScreen extends StatelessWidget {
   final List<Map<String, String>> projects = [
@@ -9,7 +8,6 @@ class ProjectListScreen extends StatelessWidget {
     {'title': 'المستشفى', 'subtitle': '111', 'workers': '41'},
     {'title': 'مبنى القابضة', 'subtitle': '13', 'workers': '22'},
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

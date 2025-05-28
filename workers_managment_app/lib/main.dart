@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workers_managment_app/screens/home_screen.dart';
+import 'package:workers_managment_app/screens/splash_screen.dart';
 // import 'screens/splash_screen.dart';
 
 void main()
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home: const DashboardScreen(),
+      home: const SplashScreen(),
     );
  } 
 }

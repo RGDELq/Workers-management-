@@ -47,22 +47,20 @@ class _LoginScreennState extends State<LoginScreenn> {
                   width: 200,
                   height: 150,
                 ),
-
                 const SizedBox(height: 20),
 
-                // Centered "Sign In"
                 const Text(
-                  "Sign In",
+                  "تسجيل الدخول ",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 35,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Color.fromARGB(255, 42, 42, 42),
                   ),
                 ),
 
                 const SizedBox(height: 30),
 
-                // Form
+                
                 Form(
                   key: loginFormKey,
                   onChanged: () {
