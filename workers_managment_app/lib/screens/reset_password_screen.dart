@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-import 'package:workers_managment_app/screens/widgets/primary_btn.dart';
-import 'package:workers_managment_app/screens/widgets/textfield.dart';
+import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
 import 'package:workers_managment_app/screens/login_screen.dart';
 
 class ResetPasswordScreen extends StatefulWidget {

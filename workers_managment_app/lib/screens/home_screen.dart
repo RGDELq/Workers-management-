@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:workers_managment_app/screens/projects_screen.dart';
 import 'package:workers_managment_app/utils/theme.dart';
+import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
+import 'package:workers_managment_app/screens/profile_screen.dart';
+import 'package:workers_managment_app/screens/workers_screen.dart';
+import 'package:workers_managment_app/screens/reports_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -43,7 +47,14 @@ class DashboardScreen extends StatelessWidget {
                           _StatCard(
                             title: 'أجمالي العمال ',
                             value: '55',
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const WorkersScreen(),
+                                ),
+                              );
+                            },
                           ),
                           const SizedBox(width: 16),
                           _StatCard(
@@ -74,7 +85,14 @@ class DashboardScreen extends StatelessWidget {
                       _FullWidthReportCard(
                         title: 'جميع التقارير ',
                         value: '25',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ReportsScreen(),
+                            ),
+                          );
+                        },
                       ),
 
                       const SizedBox(height: 24),
@@ -97,6 +115,7 @@ class DashboardScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 100),  
                     ],
                   ),
                 ),
@@ -104,6 +123,26 @@ class DashboardScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: CustomBottomNavigation(
+        onReportsPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Reports tapped')),
+          );
+        },
+        onAddReportPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Add Report tapped')),
+          );
+        },
+        onProfilePressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ProfileScreen(),
+            ),
+          );
+        },
       ),
     );
   }
