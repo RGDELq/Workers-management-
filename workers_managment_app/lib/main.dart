@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:workers_managment_app/screens/home_screen.dart';
-import 'package:workers_managment_app/screens/splash_screen.dart';
-// import 'screens/splash_screen.dart';
+// import 'package:workers_managment_app/screens/report_form_screen.dart';
+ import 'screens/splash_screen.dart';
 
 void main()
 {
@@ -17,10 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Workers managment ',
       theme: ThemeData(
                 fontFamily: 'Cairo', 
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
     );
  } 

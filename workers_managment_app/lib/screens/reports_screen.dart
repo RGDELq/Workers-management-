@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
+import 'package:workers_managment_app/screens/widgets/custom_bottom_nav.dart';
 
 class ReportsScreen extends StatefulWidget {
   const ReportsScreen({super.key});

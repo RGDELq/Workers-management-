@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:workers_managment_app/screens/projects_screen.dart';
+import 'package:workers_managment_app/screens/report_form_screen.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
+import 'package:workers_managment_app/screens/widgets/custom_bottom_nav.dart';
 import 'package:workers_managment_app/screens/profile_screen.dart';
 import 'package:workers_managment_app/screens/workers_screen.dart';
 import 'package:workers_managment_app/screens/reports_screen.dart';
@@ -42,7 +43,9 @@ class DashboardScreen extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 45),
-                      Row(
+                      Row( 
+                      
+                     
                         children: [
                           _StatCard(
                             title: 'أجمالي العمال ',
@@ -126,13 +129,19 @@ class DashboardScreen extends StatelessWidget {
       ),
       bottomNavigationBar: CustomBottomNavigation(
         onReportsPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Reports tapped')),
+       Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddReportScreen(),
+            ),
           );
         },
         onAddReportPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Add Report tapped')),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddReportScreen(),
+            ),
           );
         },
         onProfilePressed: () {

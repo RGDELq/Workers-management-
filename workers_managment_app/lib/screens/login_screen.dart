@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:workers_managment_app/screens/widgets/primary_button.dart';
+import 'package:workers_managment_app/screens/widgets/text_field_widget.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
 import 'package:workers_managment_app/screens/reset_password_screen.dart';
 import 'package:workers_managment_app/screens/home_screen.dart';
-
 class LoginScreenn extends StatefulWidget {
   const LoginScreenn({super.key});
-
   @override
   State<LoginScreenn> createState() => _LoginScreennState();
 }
-
 class _LoginScreennState extends State<LoginScreenn> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -22,14 +20,13 @@ class _LoginScreennState extends State<LoginScreenn> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [const Color.fromARGB(255, 224, 224, 217), primary],
+          gradient: LinearGradient(                                                                                               
+             colors: [const Color.fromARGB(255, 224, 224, 217), primary],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -47,7 +44,6 @@ class _LoginScreennState extends State<LoginScreenn> {
                   height: 150,
                 ),
                 const SizedBox(height: 20),
-
                 const Text(
                   "تسجيل الدخول ",
                   style: TextStyle(
@@ -56,10 +52,7 @@ class _LoginScreennState extends State<LoginScreenn> {
                     color: Color.fromARGB(255, 42, 42, 42),
                   ),
                 ),
-
-                const SizedBox(height: 30),
-
-                
+                const SizedBox(height: 30),               
                 Form(
                   key: loginFormKey,
                   onChanged: () {
@@ -130,10 +123,10 @@ class _LoginScreennState extends State<LoginScreenn> {
                         ],
                       ),
                       SizedBox(height: size.height * 0.05),
-                      Primarybtn(
+                      PrimaryButton(
                         text: "Log in",
-                        withBorder: false,
-                        isloading: false,
+                        withBorder: false,            
+                        isLoading: false,
                         isActive: enableLoginBtn,
                         onPressed: () async {
                           String email = emailController.text.trim();
@@ -149,9 +142,7 @@ class _LoginScreennState extends State<LoginScreenn> {
                             );
                             return;
                           }
-
                           // Optionally: Authenticate the user here
-
                           // Navigate to home (DashboardScreen)
                           Navigator.pushReplacement(
                             context,
@@ -172,3 +163,4 @@ class _LoginScreennState extends State<LoginScreenn> {
     );
   }
 }
+

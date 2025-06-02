@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:workers_managment_app/screens/widgets/text_field_widget.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
+import 'package:workers_managment_app/screens/widgets/custom_bottom_nav.dart';
 import 'package:workers_managment_app/screens/reset_password_screen.dart';
 import 'package:workers_managment_app/screens/login_screen.dart';
 
@@ -10,7 +11,6 @@ class ProfileScreen extends StatefulWidget {
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
-
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {

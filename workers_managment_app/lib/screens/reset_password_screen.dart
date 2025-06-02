@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:workers_managment_app/screens/widgets/primary_button.dart';
+import 'package:workers_managment_app/screens/widgets/text_field_widget.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-import 'package:workers_managment_app/screens/widgets/main_bottom_navigation.dart';
 import 'package:workers_managment_app/screens/login_screen.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   bool isLoading = false;
 
   GlobalKey<FormState> resetFormKey = GlobalKey<FormState>();
-
+                                                      
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,7 +33,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               const Color.fromARGB(255, 224, 224, 217),
               primary,
             ],
-            begin: Alignment.topLeft,
+            begin: Alignment.topLeft,                                                                                        
             end: Alignment.bottomRight,
           ),
         ),
@@ -118,7 +119,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         label: 'Email address',
                         controller: emailController,
                         hintText: 'ex: a@example.com',
-                        validator: (String? value) {
+                        validator: (String? value)
+                      {
                           if (value!.isEmpty) {
                             return "Please enter your email address";
                           }  
@@ -132,10 +134,10 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       
                       SizedBox(height: size.height * 0.05),
                       
-                      Primarybtn(
+                      PrimaryButton(
                         text: "Send Reset Link",
                         withBorder: false,
-                        isloading: isLoading,
+                        isLoading: isLoading,
                         isActive: enableResetBtn,
                         onPressed: () async {
                           String email = emailController.text.trim();
