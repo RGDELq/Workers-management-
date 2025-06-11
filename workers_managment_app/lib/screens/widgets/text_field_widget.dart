@@ -10,9 +10,12 @@ class TextFieldWidget extends StatelessWidget {
   final Widget? perfix;
   final Color fillColor;
   final bool filled;
+  
+  final dynamic maxLines;
 
   const TextFieldWidget({
     super.key,
+    this.maxLines,
     required this.controller,
     this.label,
     required this.hintText,

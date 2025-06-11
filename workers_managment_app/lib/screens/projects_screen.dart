@@ -1,43 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:workers_managment_app/screens/single_project.dart';
 import 'package:workers_managment_app/screens/widgets/arrow_back_button.dart';
 import 'package:workers_managment_app/utils/theme.dart';
-//  داتا مؤقته 
-  
+
 class ProjectListScreen extends StatelessWidget {
-final List<Map<String, String>> projects = [
+  final List<Map<String, String>> projects = [
     {'title': 'النجمة والهلال', 'subtitle': '63', 'workers': '22'},
     {'title': 'المطار', 'subtitle': '112', 'workers': '35'},
     {'title': 'المستشفى', 'subtitle': '111', 'workers': '41'},
     {'title': 'مبنى القابضة', 'subtitle': '13', 'workers': '22'},
   ];
-   ProjectListScreen({super.key});
+
+  ProjectListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: const ArrowBackButton(),
-        title: const Text('المشاريع', ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [primary, const Color.fromARGB(255, 202, 186, 169)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [primary, const Color(0xFFECE9E6)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [primary, const Color(0xFFECE9E6)],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          leading: const ArrowBackButton(),
+          title: const Text('المشاريع'),
         ),
-        child: Padding(
+        body: Padding(
           padding: const EdgeInsets.all(12.0),
           child: ListView.builder(
             itemCount: projects.length,
@@ -53,7 +48,7 @@ final List<Map<String, String>> projects = [
                   contentPadding: const EdgeInsets.all(16),
                   leading: Icon(
                     Icons.location_on,
-                    color: primary ,
+                    color: primary,
                   ),
                   title: Text(
                     project['title']!,
@@ -78,6 +73,16 @@ final List<Map<String, String>> projects = [
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SingleProjectScreen(
+                          title: project['title']!,
+                          subtitle: project['subtitle']!,
+                          workers: project['workers']!,
+                        ),
+                      ),
+                    );
                   },
                 ),
               );

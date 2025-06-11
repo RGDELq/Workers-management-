@@ -30,7 +30,7 @@ class DashboardScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Directionality(
+                      const Directionality( 
                         textDirection: TextDirection.rtl,
                         child: Text(
                           'مرحبا محمد',
@@ -74,10 +74,10 @@ class DashboardScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 80),
-                      const Text(
-                        'التقارير',
-                        style: TextStyle(
+                         const SizedBox(height: 80),
+                         const Text(
+                         'التقارير',
+                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black54,
